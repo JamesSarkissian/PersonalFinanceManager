@@ -1,20 +1,27 @@
 
 
 public class Transaction {
-    private String id;
+    private int transactionID;
+    private int userID;
     private double amount;
     private String description;
     private String category;
 
-    public Transaction(String id, double amount, String description, String category) {
-        this.id = id;
+
+    public Transaction(int transactionID, int userID, double amount, String description, String category) {
+        this.transactionID = transactionID;
+        this.userID = userID;
         this.amount = amount;
         this.descripton = description;
         this.category = category;
     }
 
-    public String getID() {
-        return this.id;
+    public int getTransactionID() {
+        return this.transactionID;
+    }
+
+    public int getUserID() {
+        return this.userID;
     }
 
     public double getAmount() {
@@ -29,9 +36,6 @@ public class Transaction {
         return this.category
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
 
     public void setDescription(String description) {
         this.description = description;
@@ -39,5 +43,11 @@ public class Transaction {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return this.transactionID + " | " + description 
+            + " | $" + String.format("%.2f", this.amount) + " | " + this.category;
     }
 }
