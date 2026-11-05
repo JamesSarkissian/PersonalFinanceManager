@@ -12,7 +12,7 @@ public class Transaction {
         this.transactionID = transactionID;
         this.userID = userID;
         this.amount = amount;
-        this.descripton = description;
+        this.description = description;
         this.category = category;
     }
 
@@ -33,7 +33,7 @@ public class Transaction {
     }
 
     public String getCategory() {
-        return this.category
+        return this.category;
     }
 
 
